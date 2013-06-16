@@ -83,6 +83,21 @@ namespace GestionAlumnos.DL
             }
             return clienteID;
         }
+        public static int ObtenerUltimoID()
+        {
+            Database oDb = DatabaseFactory.CreateDatabase("gestionAlumnos");
+            int cli = -1;
+            try
+            {
+                cli = int.Parse(oDb.ExecuteScalar("ObtenerUltimoIDTiposDocumentos").ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Problemas Al Obtener El Ultimo Número De Tipo De Documento: " + ex.Message);
+                throw;
+            }
+            return cli;
+        }
 
     }
 }
