@@ -15,18 +15,45 @@ namespace Proyecto_GestionAlumnos
     {
         #region Variables
             
-        GestorAlumnos oGA;
+            GestorAlumnos oGA;
             GestorBarrios oGB;
             GestorCiudades oGC;
             GestorDomicilios oGD;
             GestorProvincias oGP;
             GestorTipoDocumentos oGTP;
-            
+            int idDomicilio;
         #endregion
-        
-        #region Constructor
-        
-            public frmAltaAlumnos()
+
+        #region Getters And Setters
+
+            #region Domicilio
+
+                public int pDireccionID { get; set; }    
+                public string pCalle { get; set; }
+                public string pAltura { get; set; }
+                public string pDepto { get; set; }
+                public string pPiso { get; set; }
+                public int pBarrioID { get; set; }
+                public int pCiudadID { get; set; }
+                public int pProvinciaID { get; set; }
+                
+            #endregion
+            #region Alumno
+                public string pNombres { get; set; }
+                public string pApellidos { get; set; }
+                public int pTipoDocumentoID { get; set; }
+                public int pNroDocumento { get; set; }
+                public string pTelefonoFijo { get; set; }
+                public string pTelefonoCelular { get; set; }
+                public string pNacionalidad { get; set; }
+                public DateTime pFechaNacimiento { get; set; }
+                public int pEdad { get; set; }
+            #endregion
+        #endregion
+
+                #region Constructor
+
+                public frmAltaAlumnos()
             {
                 InitializeComponent();
                 inicializarDatos();
@@ -104,11 +131,129 @@ namespace Proyecto_GestionAlumnos
                     throw;
                 }
             }
-    
-        #endregion
+            private void leerDatosDomicilio()
+            {
+                try
+                {
+                    pCalle = txtDireccion.Text.ToString();
+                    pAltura = txtAltura.Text.ToString();
+                    pBarrioID =int.Parse( cboBarrio.SelectedValue.ToString());
+                    pCiudadID = int.Parse(cboCiudad.SelectedValue.ToString());
+                    pProvinciaID = int.Parse(cboProvincia.SelectedValue.ToString());
+                    if (txtPiso.Text == "")
+                        txtPiso.Text = "-";
+                    pPiso = txtPiso.Text.ToString();
+                    if (txtDepto.Text == "")
+                        txtDepto.Text = "-";
+                    pDepto = txtDepto.Text.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("leerDatosDomicilio:" + ex.Message);
+                    throw;
+                }
+            }
+            private void leerDatosAlumnos()
+            {
+                try
+                {
+                    pNombres = txtNombres.Text.ToString();
+                    pApellidos = txtApellido.Text.ToString();
+                    pTipoDocumentoID = int.Parse(cboTipoDocumento.SelectedValue.ToString());
+                    pNroDocumento = int.Parse(txtDocumento.Text.ToString());
+                    pFechaNacimiento =dtpFechaNacimiento.Value;
+                    pEdad = int.Parse(txtEdad.Text.ToString());
+                    pNacionalidad = txtNacionalidad.Text.ToString();
+                    pTelefonoCelular = txtCelular.Text.ToString();
+                    pTelefonoFijo = txtTelefono.Text.ToString();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("leerDatosAlumnos:" + ex.Message);
+                    throw;
+                }
+            }
+            private bool registrarDomicilio()
+            {
+                bool resRegistro=false;
+                int idDom=-1;
+                try
+                {
+                    leerDatosDomicilio();
+                    Domicilio oDom = new Domicilio();
+                    oDom.Calle = pCalle;
+                    oDom.Altura = pAltura;
+                    oDom.BarrioID = pBarrioID;
+                    oDom.CiudadID = pCiudadID;
+                    oDom.ProvinciaID = pProvinciaID;
+                    oDom.Depto = pDepto;
+                    oDom.Piso = pPiso;
+                    oGD = new GestorDomicilios();
+                    idDom = oGD.Insertar(oDom);
+                    if (idDom < 1)
+                        idDom = oGD.ObtenerID();
+                    idDomicilio = idDom;
+                    resRegistro = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Problema al Registrar el Domiclio:" + ex.Message);
+                    throw;
+                }
+                return resRegistro;
+            }
+            private bool registrarAlumno()
+            {
+                bool resRegistro = false;
+                int idAlum = -1;
+                try
+                {
+                    leerDatosAlumnos();
+                    Alumno oAlu = new Alumno();
+                    oAlu.Apellidos = pApellidos;
+                    oAlu.Nombres = pNombres;
+                    oAlu.NroDocumento = pNroDocumento;
+                    oAlu.Edad = pEdad;
+                    oAlu.FechaNacimiento = pFechaNacimiento;
+                    oAlu.Nacionalidad = pNacionalidad;
+                    oAlu.TelefonoCelular = pTelefonoCelular;
+                    oAlu.TelefonoFijo = pTelefonoFijo;
+                    oAlu.TipoDocumentoID = pTipoDocumentoID;
+                    oAlu.DireccionID = idDomicilio;
+                    oGA = new GestorAlumnos();
+                    idAlum = oGA.Insertar(oAlu);
+                    if (idAlum < 1)
+                        idAlum = oGA.ObtenerID();
+                    resRegistro = true;
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine("Problema al Registrar el Alumno:" + ex.Message);
+                    throw;
+                }
+                return resRegistro;
+            }
+        #endregion 
         
         #region Eventos
             
+            private void btnAlta_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    if (registrarDomicilio())
+                    {
+                        txtNacionalidad.Text = "ANDUVO";
+                        registrarAlumno();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Problema al Registrar el Alumno:" + ex.Message);
+                    throw;
+                }
+            }
         #endregion
        
 

@@ -25,5 +25,9 @@ namespace GestionAlumnos.BL
         {
             return TiposDocumentos.Eliminar(id);
         }
+        public int ObtenerID()
+        {
+            return TiposDocumentos.ObtenerUltimoID();   
+        }
     }
 }

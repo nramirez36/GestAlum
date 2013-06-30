@@ -25,5 +25,9 @@ namespace GestionAlumnos.BL
         {
             return Ciudades.Eliminar(id);
         }
+        public int ObtenerID()
+        {
+            return Ciudades.ObtenerUltimoID();
+        }
     }
 }

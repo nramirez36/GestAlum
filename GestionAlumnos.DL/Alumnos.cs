@@ -74,7 +74,8 @@ namespace GestionAlumnos.DL
             int clienteID = -1;
             try
             {
-                clienteID = int.Parse(oDb.ExecuteScalar("InsertarAlumnos", pAlumno.Nombres, pAlumno.Apellidos, pAlumno.DireccionID, pAlumno.TipoDocumentoID, pAlumno.NroDocumento, pAlumno.TelefonoFijo, pAlumno.TelefonoCelular, pAlumno.Nacionalidad, pAlumno.FechaNacimiento, pAlumno.Edad).ToString());
+                oDb.ExecuteNonQuery("InsertarAlumnos", pAlumno.Nombres, pAlumno.Apellidos, pAlumno.DireccionID, pAlumno.TipoDocumentoID, pAlumno.NroDocumento, pAlumno.TelefonoFijo, pAlumno.TelefonoCelular, pAlumno.Nacionalidad, pAlumno.FechaNacimiento, pAlumno.Edad);
+                clienteID = int.Parse(oDb.ExecuteScalar("ObtenerUltimoIDAlumnos").ToString());
             }
             catch (Exception ex)
             {
@@ -82,6 +83,21 @@ namespace GestionAlumnos.DL
                 throw;
             }
             return clienteID;
+        }
+        public static int ObtenerUltimoID()
+        {
+            Database oDb = DatabaseFactory.CreateDatabase("gestionAlumnos");
+            int cli = -1;
+            try
+            {
+                cli = int.Parse(oDb.ExecuteScalar("ObtenerUltimoIDAlumnos").ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Problemas Al Obtener El Ultimo Número De Alumno: " + ex.Message);
+                throw;
+            }
+            return cli;
         }
     }
 }

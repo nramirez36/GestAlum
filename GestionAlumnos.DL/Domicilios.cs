@@ -74,7 +74,9 @@ namespace GestionAlumnos.DL
             int clienteID = -1;
             try
             {
-                clienteID = int.Parse(oDb.ExecuteScalar("InsertarDomicilios", pDomicilio.ProvinciaID, pDomicilio.CiudadID, pDomicilio.BarrioID, pDomicilio.Piso, pDomicilio.Altura, pDomicilio.Calle, pDomicilio.Depto).ToString());
+                //clienteID = int.Parse(oDb.ExecuteScalar("InsertarDomicilios", pDomicilio.ProvinciaID, pDomicilio.CiudadID, pDomicilio.BarrioID, pDomicilio.Piso, pDomicilio.Altura, pDomicilio.Calle, pDomicilio.Depto).ToString());
+                oDb.ExecuteNonQuery("InsertarDomicilios", pDomicilio.ProvinciaID, pDomicilio.CiudadID, pDomicilio.BarrioID, pDomicilio.Piso, pDomicilio.Altura, pDomicilio.Calle, pDomicilio.Depto);
+                clienteID = int.Parse(oDb.ExecuteScalar("ObtenerUltimoIDDomicilio").ToString());
             }
             catch (Exception ex)
             {
@@ -82,6 +84,21 @@ namespace GestionAlumnos.DL
                 throw;
             }
             return clienteID;
+        }
+        public static int ObtenerUltimoID()
+        {
+            Database oDb = DatabaseFactory.CreateDatabase("gestionAlumnos");
+            int cli = -1;
+            try
+            {
+                cli = int.Parse(oDb.ExecuteScalar("ObtenerUltimoIDDomicilio").ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Problemas Al Obtener El Ultimo Número De Domicilio: " + ex.Message);
+                throw;
+            }
+            return cli;
         }
     }
 }

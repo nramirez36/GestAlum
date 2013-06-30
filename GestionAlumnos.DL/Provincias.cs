@@ -83,5 +83,20 @@ namespace GestionAlumnos.DL
             }
             return clienteID;
         }
+        public static int ObtenerUltimoID()
+        {
+            Database oDb = DatabaseFactory.CreateDatabase("gestionAlumnos");
+            int cli = -1;
+            try
+            {
+                cli = int.Parse(oDb.ExecuteScalar("ObtenerUltimoIDProvincias").ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Problemas Al Obtener El Ultimo Número De Provincia: " + ex.Message);
+                throw;
+            }
+            return cli;
+        }
     }
 }

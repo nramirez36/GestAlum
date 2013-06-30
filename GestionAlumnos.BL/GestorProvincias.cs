@@ -25,5 +25,9 @@ namespace GestionAlumnos.BL
         {
             return Provincias.Eliminar(id);
         }
+        public int ObtenerID()
+        {
+            return Provincias.ObtenerUltimoID();
+        }
     }
 }

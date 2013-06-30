@@ -25,5 +25,9 @@ namespace GestionAlumnos.BL
         {
             return Barrios.Eliminar(id);
         }
+        public int ObtenerID()
+        {
+            return Barrios.ObtenerUltimoID();
+        }
     }
 }
