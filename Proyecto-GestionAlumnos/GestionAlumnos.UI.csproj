@@ -26,6 +26,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
@@ -86,6 +89,12 @@
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTestCalcularEdad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestCalcularEdad.Designer.cs">
+      <DependentUpon>frmTestCalcularEdad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAltaAlumnos.resx">
@@ -93,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestCalcularEdad.resx">
+      <DependentUpon>frmTestCalcularEdad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,6 +154,10 @@
     <ProjectReference Include="..\GestionAlumnos.Entities\GestionAlumnos.Entities.csproj">
       <Project>{67c23aad-9e41-486d-bdd5-7e765d223ddb}</Project>
       <Name>GestionAlumnos.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\nramirez36.Log\nramirez36.Logger.csproj">
+      <Project>{672502c1-a088-45ca-adf7-821e967bbdac}</Project>
+      <Name>nramirez36.Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

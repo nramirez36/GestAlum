@@ -29,5 +29,9 @@ namespace GestionAlumnos.BL
         {
             return Alumnos.ObtenerUltimoID();
         }
+        public IEnumerable<Alumno> ConsultarAlumnos(string pApellido)
+        {
+            return Alumnos.BuscarAlumnosPorApellido(pApellido);
+        }
     }
 }

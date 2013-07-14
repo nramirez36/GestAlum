@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Proyecto_GestionAlumnos
 {
     public partial class frmPantallaPrincipal : Form
@@ -36,5 +35,14 @@ namespace Proyecto_GestionAlumnos
                 frmAltaAlumnos.Show();
             }
         #endregion                
+
+            
+
+            private void calcularEdadToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                frmTestCalcularEdad frmTestCalcularEdad = new frmTestCalcularEdad();
+                frmTestCalcularEdad.MdiParent = this;
+                frmTestCalcularEdad.Show();
+            }
     }
 }

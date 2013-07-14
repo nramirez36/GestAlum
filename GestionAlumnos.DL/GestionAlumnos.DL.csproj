@@ -47,6 +47,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +60,12 @@
     <Compile Include="Barrios.cs" />
     <Compile Include="Ciudades.cs" />
     <Compile Include="Domicilios.cs" />
+    <Compile Include="frmBuscarAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarAlumnos.Designer.cs">
+      <DependentUpon>frmBuscarAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincias.cs" />
     <Compile Include="TiposDocumentos.cs" />
@@ -67,6 +75,11 @@
       <Project>{67c23aad-9e41-486d-bdd5-7e765d223ddb}</Project>
       <Name>GestionAlumnos.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmBuscarAlumnos.resx">
+      <DependentUpon>frmBuscarAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

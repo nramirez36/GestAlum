@@ -41,6 +41,8 @@
             this.porOrdenAlfabeticoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcularEdadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.mnuGeneral.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +54,8 @@
             this.alumnosToolStripMenuItem,
             this.materiasToolStripMenuItem,
             this.reportesToolStripMenuItem,
-            this.ayudasToolStripMenuItem});
+            this.ayudasToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.mnuGeneral.Location = new System.Drawing.Point(0, 0);
             this.mnuGeneral.Name = "mnuGeneral";
             this.mnuGeneral.Size = new System.Drawing.Size(1008, 24);
@@ -142,6 +145,21 @@
             this.ayudasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudasToolStripMenuItem.Text = "Ayuda";
             // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calcularEdadToolStripMenuItem});
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            // 
+            // calcularEdadToolStripMenuItem
+            // 
+            this.calcularEdadToolStripMenuItem.Name = "calcularEdadToolStripMenuItem";
+            this.calcularEdadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.calcularEdadToolStripMenuItem.Text = "Calcular edad";
+            this.calcularEdadToolStripMenuItem.Click += new System.EventHandler(this.calcularEdadToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 707);
@@ -186,6 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem porOrdenAlfabeticoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porDocumentoToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calcularEdadToolStripMenuItem;
     }
 }
 

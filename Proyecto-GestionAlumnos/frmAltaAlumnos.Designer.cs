@@ -109,6 +109,7 @@
             // 
             // txtEdad
             // 
+            this.txtEdad.Enabled = false;
             this.txtEdad.Location = new System.Drawing.Point(421, 56);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(104, 20);
@@ -162,6 +163,7 @@
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaNacimiento.TabIndex = 5;
+            this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.dtpFechaNacimiento_ValueChanged);
             // 
             // lblFechaNacimiento
             // 

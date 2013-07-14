@@ -7,6 +7,7 @@ using GestionAlumnos.Entities;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
+using System.Data;
 namespace GestionAlumnos.DL
 {
     public class Alumnos
@@ -98,6 +99,48 @@ namespace GestionAlumnos.DL
                 throw;
             }
             return cli;
+        }
+        public static Alumno ConsultarAlumno(string pApellido)
+        {
+            Database oDb = DatabaseFactory.CreateDatabase("gestionAlumnos");
+            Alumno oAlu = new Alumno();
+            int cli = -1;
+            try
+            {
+                IDataReader oIDR=oDb.ExecuteReader("BuscarAlumno",pApellido); 
+                while (oIDR.Read())
+                {
+                    oAlu.AlumnoID = int.Parse(oIDR.GetValue(0).ToString());
+                    oAlu.Nombres = oIDR.GetValue(1).ToString();
+                    oAlu.Apellidos = oIDR.GetValue(2).ToString();
+                    oAlu.TipoDocumentoID = int.Parse(oIDR.GetValue(3).ToString());
+                    oAlu.NroDocumento = int.Parse(oIDR.GetValue(4).ToString());
+                    oAlu.TelefonoFijo = oIDR.GetValue(5).ToString();
+                    oAlu.TelefonoCelular = oIDR.GetValue(6).ToString();
+                    oAlu.Nacionalidad = oIDR.GetValue(7).ToString();
+                    oAlu.FechaNacimiento = DateTime.Parse(oIDR.GetValue(8).ToString());
+                    oAlu.Edad = int.Parse(oIDR.GetValue(9).ToString());
+                }
+                return oAlu;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Problemas Al Obtener El Alumno: "+ex.Message);
+                throw;
+            }
+        }
+        public static IEnumerable<Alumno> BuscarAlumnosPorApellido(string pApellido)
+        {
+            Database oDb = DatabaseFactory.CreateDatabase("gestionAlumnos");
+            try
+            {
+                return oDb.ExecuteSprocAccessor("BuscarAlumno", MapBuilder<Alumno>.MapAllProperties().Build(),pApellido);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Problemas Al Listar Los ALumnos: " + ex.Message);
+                throw;
+            }
         }
     }
 }

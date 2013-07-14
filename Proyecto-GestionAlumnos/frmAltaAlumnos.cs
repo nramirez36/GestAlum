@@ -49,11 +49,12 @@ namespace Proyecto_GestionAlumnos
                 public DateTime pFechaNacimiento { get; set; }
                 public int pEdad { get; set; }
             #endregion
+
         #endregion
 
-                #region Constructor
+        #region Constructor
 
-                public frmAltaAlumnos()
+            public frmAltaAlumnos()
             {
                 InitializeComponent();
                 inicializarDatos();
@@ -234,6 +235,19 @@ namespace Proyecto_GestionAlumnos
                 }
                 return resRegistro;
             }
+            public int Edad()
+            {
+                //Obtengo la diferencia en años.
+                int edad = DateTime.Now.Year - dtpFechaNacimiento.Value.Year;
+
+                //Obtengo la fecha de cumpleaños de este año.
+                DateTime nacimientoAhora = dtpFechaNacimiento.Value.AddYears(edad);
+                //Le resto un año si la fecha actual es anterior 
+                //al día de nacimiento.
+                if (DateTime.Now.CompareTo(nacimientoAhora) < 0)
+                    edad--;
+                return edad;
+            }
         #endregion 
         
         #region Eventos
@@ -254,9 +268,10 @@ namespace Proyecto_GestionAlumnos
                     throw;
                 }
             }
-        #endregion
-       
-
-        
+            private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
+            {
+                txtEdad.Text = Edad().ToString();
+            }
+        #endregion    
     }
 }
