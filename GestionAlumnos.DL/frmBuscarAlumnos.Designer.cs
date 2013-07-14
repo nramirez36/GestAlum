@@ -94,6 +94,7 @@
             this.btnBuscarAlumno.TabIndex = 2;
             this.btnBuscarAlumno.Text = "Buscar";
             this.btnBuscarAlumno.UseVisualStyleBackColor = true;
+            this.btnBuscarAlumno.Click += new System.EventHandler(this.btnBuscarAlumno_Click);
             // 
             // txtBuscarApellido
             // 
@@ -107,9 +108,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese Apellido:";
+            this.label1.Text = "Ingrese DNI:";
             // 
             // gpbResultado
             // 
@@ -441,6 +442,7 @@
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmBuscarAlumnos
             // 

@@ -13,7 +13,7 @@ namespace GestionAlumnos.DL
     public partial class frmBuscarAlumnos : Form
     {
         #region Variables
-        
+            
         #endregion
 
         #region Getters And Setters
@@ -66,10 +66,20 @@ namespace GestionAlumnos.DL
                 cboTipoDocumento.Enabled = true;
             }
         #endregion
-
+            
         #region Eventos
         
+            private void btnBuscarAlumno_Click(object sender, EventArgs e)
+            {
+
+            }
+            private void btnAceptar_Click(object sender, EventArgs e)
+            {
+
+            }
         #endregion
+
+            
 
         
         

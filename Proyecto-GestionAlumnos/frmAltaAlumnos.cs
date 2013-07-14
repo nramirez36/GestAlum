@@ -258,7 +258,7 @@ namespace Proyecto_GestionAlumnos
                 {
                     if (registrarDomicilio())
                     {
-                        txtNacionalidad.Text = "ANDUVO";
+                        //txtNacionalidad.Text = "ANDUVO";
                         registrarAlumno();
                     }
                 }
