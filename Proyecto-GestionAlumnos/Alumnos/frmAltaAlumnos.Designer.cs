@@ -33,7 +33,6 @@
             this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.lblEdad = new System.Windows.Forms.Label();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
             this.lblDocumento = new System.Windows.Forms.Label();
             this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
             this.lblTipoDocumento = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.grpDatosDomicilio = new System.Windows.Forms.GroupBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
             this.lblAltura = new System.Windows.Forms.Label();
             this.cboBarrio = new System.Windows.Forms.ComboBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
@@ -52,11 +50,8 @@
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblDepto = new System.Windows.Forms.Label();
             this.txtDepto = new System.Windows.Forms.TextBox();
-            this.txtPiso = new System.Windows.Forms.TextBox();
             this.lblPiso = new System.Windows.Forms.Label();
-            this.txtCelular = new System.Windows.Forms.TextBox();
             this.lblCelular = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCiudad = new System.Windows.Forms.Label();
             this.lblBarrio = new System.Windows.Forms.Label();
@@ -64,17 +59,22 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtDocumento = new System.Windows.Forms.MaskedTextBox();
+            this.txtAltura = new System.Windows.Forms.MaskedTextBox();
+            this.txtPiso = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.grpDatosAlumnos.SuspendLayout();
             this.grpDatosDomicilio.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDatosAlumnos
             // 
+            this.grpDatosAlumnos.Controls.Add(this.txtDocumento);
             this.grpDatosAlumnos.Controls.Add(this.txtNacionalidad);
             this.grpDatosAlumnos.Controls.Add(this.lblNacionalidad);
             this.grpDatosAlumnos.Controls.Add(this.txtEdad);
             this.grpDatosAlumnos.Controls.Add(this.lblEdad);
-            this.grpDatosAlumnos.Controls.Add(this.txtDocumento);
             this.grpDatosAlumnos.Controls.Add(this.lblDocumento);
             this.grpDatosAlumnos.Controls.Add(this.cboTipoDocumento);
             this.grpDatosAlumnos.Controls.Add(this.lblTipoDocumento);
@@ -123,13 +123,6 @@
             this.lblEdad.Size = new System.Drawing.Size(35, 13);
             this.lblEdad.TabIndex = 6;
             this.lblEdad.Text = "Edad:";
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.Location = new System.Drawing.Point(421, 84);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(104, 20);
-            this.txtDocumento.TabIndex = 11;
             // 
             // lblDocumento
             // 
@@ -208,6 +201,9 @@
             // 
             // grpDatosDomicilio
             // 
+            this.grpDatosDomicilio.Controls.Add(this.txtCelular);
+            this.grpDatosDomicilio.Controls.Add(this.txtTelefono);
+            this.grpDatosDomicilio.Controls.Add(this.txtPiso);
             this.grpDatosDomicilio.Controls.Add(this.txtAltura);
             this.grpDatosDomicilio.Controls.Add(this.lblAltura);
             this.grpDatosDomicilio.Controls.Add(this.cboBarrio);
@@ -216,11 +212,8 @@
             this.grpDatosDomicilio.Controls.Add(this.lblProvincia);
             this.grpDatosDomicilio.Controls.Add(this.lblDepto);
             this.grpDatosDomicilio.Controls.Add(this.txtDepto);
-            this.grpDatosDomicilio.Controls.Add(this.txtPiso);
             this.grpDatosDomicilio.Controls.Add(this.lblPiso);
-            this.grpDatosDomicilio.Controls.Add(this.txtCelular);
             this.grpDatosDomicilio.Controls.Add(this.lblCelular);
-            this.grpDatosDomicilio.Controls.Add(this.txtTelefono);
             this.grpDatosDomicilio.Controls.Add(this.lblTelefono);
             this.grpDatosDomicilio.Controls.Add(this.lblCiudad);
             this.grpDatosDomicilio.Controls.Add(this.lblBarrio);
@@ -232,13 +225,6 @@
             this.grpDatosDomicilio.TabIndex = 1;
             this.grpDatosDomicilio.TabStop = false;
             this.grpDatosDomicilio.Text = "Datos del Domicilio";
-            // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(421, 33);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 20);
-            this.txtAltura.TabIndex = 3;
             // 
             // lblAltura
             // 
@@ -295,15 +281,8 @@
             // 
             this.txtDepto.Location = new System.Drawing.Point(421, 107);
             this.txtDepto.Name = "txtDepto";
-            this.txtDepto.Size = new System.Drawing.Size(100, 20);
+            this.txtDepto.Size = new System.Drawing.Size(104, 20);
             this.txtDepto.TabIndex = 9;
-            // 
-            // txtPiso
-            // 
-            this.txtPiso.Location = new System.Drawing.Point(121, 103);
-            this.txtPiso.Name = "txtPiso";
-            this.txtPiso.Size = new System.Drawing.Size(100, 20);
-            this.txtPiso.TabIndex = 7;
             // 
             // lblPiso
             // 
@@ -314,13 +293,6 @@
             this.lblPiso.TabIndex = 6;
             this.lblPiso.Text = "Piso:";
             // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(421, 166);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(124, 20);
-            this.txtCelular.TabIndex = 17;
-            // 
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
@@ -329,13 +301,6 @@
             this.lblCelular.Size = new System.Drawing.Size(42, 13);
             this.lblCelular.TabIndex = 16;
             this.lblCelular.Text = "Celular:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 169);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
-            this.txtTelefono.TabIndex = 15;
             // 
             // lblTelefono
             // 
@@ -399,6 +364,50 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // txtDocumento
+            // 
+            this.txtDocumento.BeepOnError = true;
+            this.txtDocumento.Location = new System.Drawing.Point(421, 87);
+            this.txtDocumento.Mask = "9999999";
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(104, 20);
+            this.txtDocumento.TabIndex = 11;
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Location = new System.Drawing.Point(421, 33);
+            this.txtAltura.Mask = "99999";
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(104, 20);
+            this.txtAltura.TabIndex = 3;
+            this.txtAltura.ValidatingType = typeof(int);
+            // 
+            // txtPiso
+            // 
+            this.txtPiso.BeepOnError = true;
+            this.txtPiso.Location = new System.Drawing.Point(121, 103);
+            this.txtPiso.Mask = "99999";
+            this.txtPiso.Name = "txtPiso";
+            this.txtPiso.Size = new System.Drawing.Size(100, 20);
+            this.txtPiso.TabIndex = 7;
+            this.txtPiso.ValidatingType = typeof(int);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(121, 166);
+            this.txtTelefono.Mask = "0000-000-000000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefono.TabIndex = 15;
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(421, 166);
+            this.txtCelular.Mask = "0000-000-000000";
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(104, 20);
+            this.txtCelular.TabIndex = 17;
+            // 
             // frmAltaAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +433,6 @@
         private System.Windows.Forms.GroupBox grpDatosAlumnos;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.ComboBox cboTipoDocumento;
         private System.Windows.Forms.Label lblTipoDocumento;
@@ -441,11 +449,8 @@
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblDepto;
         private System.Windows.Forms.TextBox txtDepto;
-        private System.Windows.Forms.TextBox txtPiso;
         private System.Windows.Forms.Label lblPiso;
-        private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label lblCelular;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblCiudad;
         private System.Windows.Forms.Label lblBarrio;
@@ -455,7 +460,11 @@
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cboBarrio;
-        private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.Label lblAltura;
+        private System.Windows.Forms.MaskedTextBox txtDocumento;
+        private System.Windows.Forms.MaskedTextBox txtCelular;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.MaskedTextBox txtPiso;
+        private System.Windows.Forms.MaskedTextBox txtAltura;
     }
 }

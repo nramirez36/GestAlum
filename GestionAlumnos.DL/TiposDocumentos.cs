@@ -7,7 +7,7 @@ using GestionAlumnos.Entities;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
-namespace GestionAlumnos.DL
+namespace GestionAlumnos.UI
 {
     public class TiposDocumentos
     {

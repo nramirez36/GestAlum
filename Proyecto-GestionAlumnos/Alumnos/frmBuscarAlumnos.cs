@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GestionAlumnos.Entities;
-namespace GestionAlumnos.DL
+namespace Proyecto_GestionAlumnos
 {
     public partial class frmBuscarAlumnos : Form
     {
@@ -25,6 +25,8 @@ namespace GestionAlumnos.DL
             {
                 InitializeComponent();
                 DesactivarCampos();
+                //grpDatosAlumnos.Visible = false;
+                //grpDatosDomicilio.Visible = false;
             }
         #endregion
 
@@ -46,6 +48,7 @@ namespace GestionAlumnos.DL
                 cboCiudad.Enabled = false;
                 cboProvincia.Enabled = false;
                 cboTipoDocumento.Enabled = false;
+                dtpFechaNacimiento.Enabled = false;
             }
             private void ActivarCampos()
             {
@@ -64,6 +67,7 @@ namespace GestionAlumnos.DL
                 cboCiudad.Enabled = true;
                 cboProvincia.Enabled = true;
                 cboTipoDocumento.Enabled = true;
+                dtpFechaNacimiento.Enabled = true;
             }
         #endregion
             
@@ -71,11 +75,13 @@ namespace GestionAlumnos.DL
         
             private void btnBuscarAlumno_Click(object sender, EventArgs e)
             {
-
+                grpDatosAlumnos.Visible = true;
+                grpDatosDomicilio.Visible = true;
+                ActivarCampos();
             }
             private void btnAceptar_Click(object sender, EventArgs e)
             {
-
+                this.Close();
             }
         #endregion
 

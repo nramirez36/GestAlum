@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GestionAlumnos.Entities;
-using GestionAlumnos.DL;
+using GestionAlumnos.UI;
 namespace GestionAlumnos.BL
 {
     public class GestorAlumnos

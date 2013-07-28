@@ -260,6 +260,7 @@ namespace Proyecto_GestionAlumnos
                     {
                         //txtNacionalidad.Text = "ANDUVO";
                         registrarAlumno();
+                        this.Close();
                     }
                 }
                 catch (Exception ex)

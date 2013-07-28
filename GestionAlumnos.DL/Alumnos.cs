@@ -8,7 +8,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data;
-namespace GestionAlumnos.DL
+namespace GestionAlumnos.UI
 {
     public class Alumnos
     {

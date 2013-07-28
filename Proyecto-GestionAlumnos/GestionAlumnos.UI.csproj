@@ -77,11 +77,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAltaAlumnos.cs">
+    <Compile Include="Alumnos\frmAltaAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAltaAlumnos.Designer.cs">
+    <Compile Include="Alumnos\frmAltaAlumnos.Designer.cs">
       <DependentUpon>frmAltaAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmBajaAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmBajaAlumnos.Designer.cs">
+      <DependentUpon>frmBajaAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmBuscarAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmBuscarAlumnos.Designer.cs">
+      <DependentUpon>frmBuscarAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmModificarAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmModificarAlumnos.Designer.cs">
+      <DependentUpon>frmModificarAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\frmAltaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\frmAltaCursos.Designer.cs">
+      <DependentUpon>frmAltaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\frmBajaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\frmBajaCursos.Designer.cs">
+      <DependentUpon>frmBajaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\frmBuscarCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\frmBuscarCursos.Designer.cs">
+      <DependentUpon>frmBuscarCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\frmModificarCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\frmModificarCursos.Designer.cs">
+      <DependentUpon>frmModificarCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -95,10 +137,43 @@
     <Compile Include="frmTestCalcularEdad.Designer.cs">
       <DependentUpon>frmTestCalcularEdad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materias\frmAltaMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias\frmAltaMaterias.Designer.cs">
+      <DependentUpon>frmAltaMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materias\frmBajaMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias\frmBajaMaterias.Designer.cs">
+      <DependentUpon>frmBajaMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materias\frmBuscarMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias\frmBuscarMaterias.Designer.cs">
+      <DependentUpon>frmBuscarMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materias\frmModificarMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias\frmModificarMaterias.Designer.cs">
+      <DependentUpon>frmModificarMaterias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAltaAlumnos.resx">
+    <Compile Include="Reportes\frmListadoAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmListadoAlumnos.Designer.cs">
+      <DependentUpon>frmListadoAlumnos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Alumnos\frmAltaAlumnos.resx">
       <DependentUpon>frmAltaAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmBuscarAlumnos.resx">
+      <DependentUpon>frmBuscarAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
@@ -160,6 +235,7 @@
       <Name>nramirez36.Logger</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

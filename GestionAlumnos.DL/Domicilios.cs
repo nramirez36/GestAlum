@@ -7,7 +7,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using GestionAlumnos.Entities;
-namespace GestionAlumnos.DL
+namespace GestionAlumnos.UI
 {
     public class Domicilios
     {

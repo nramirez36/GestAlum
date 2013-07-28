@@ -1,4 +1,4 @@
-﻿namespace GestionAlumnos.DL
+﻿namespace Proyecto_GestionAlumnos
 {
     partial class frmBuscarAlumnos
     {
@@ -32,7 +32,6 @@
             this.btnBuscarAlumno = new System.Windows.Forms.Button();
             this.txtBuscarApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gpbResultado = new System.Windows.Forms.GroupBox();
             this.grpDatosDomicilio = new System.Windows.Forms.GroupBox();
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.lblAltura = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.lblBarrio = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.grpDatosAlumnos = new System.Windows.Forms.GroupBox();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.lblNacionalidad = new System.Windows.Forms.Label();
@@ -67,9 +67,7 @@
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.grpBuscarAlumnos.SuspendLayout();
-            this.gpbResultado.SuspendLayout();
             this.grpDatosDomicilio.SuspendLayout();
             this.grpDatosAlumnos.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +86,7 @@
             // 
             // btnBuscarAlumno
             // 
-            this.btnBuscarAlumno.Location = new System.Drawing.Point(529, 17);
+            this.btnBuscarAlumno.Location = new System.Drawing.Point(529, 20);
             this.btnBuscarAlumno.Name = "btnBuscarAlumno";
             this.btnBuscarAlumno.Size = new System.Drawing.Size(101, 23);
             this.btnBuscarAlumno.TabIndex = 2;
@@ -98,9 +96,9 @@
             // 
             // txtBuscarApellido
             // 
-            this.txtBuscarApellido.Location = new System.Drawing.Point(99, 20);
+            this.txtBuscarApellido.Location = new System.Drawing.Point(120, 20);
             this.txtBuscarApellido.Name = "txtBuscarApellido";
-            this.txtBuscarApellido.Size = new System.Drawing.Size(424, 20);
+            this.txtBuscarApellido.Size = new System.Drawing.Size(403, 20);
             this.txtBuscarApellido.TabIndex = 1;
             // 
             // label1
@@ -111,17 +109,6 @@
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingrese DNI:";
-            // 
-            // gpbResultado
-            // 
-            this.gpbResultado.Controls.Add(this.grpDatosDomicilio);
-            this.gpbResultado.Controls.Add(this.grpDatosAlumnos);
-            this.gpbResultado.Location = new System.Drawing.Point(13, 77);
-            this.gpbResultado.Name = "gpbResultado";
-            this.gpbResultado.Size = new System.Drawing.Size(636, 363);
-            this.gpbResultado.TabIndex = 2;
-            this.gpbResultado.TabStop = false;
-            this.gpbResultado.Text = "Resultado";
             // 
             // grpDatosDomicilio
             // 
@@ -143,9 +130,9 @@
             this.grpDatosDomicilio.Controls.Add(this.lblBarrio);
             this.grpDatosDomicilio.Controls.Add(this.txtDireccion);
             this.grpDatosDomicilio.Controls.Add(this.lblDireccion);
-            this.grpDatosDomicilio.Location = new System.Drawing.Point(-6, 162);
+            this.grpDatosDomicilio.Location = new System.Drawing.Point(12, 251);
             this.grpDatosDomicilio.Name = "grpDatosDomicilio";
-            this.grpDatosDomicilio.Size = new System.Drawing.Size(648, 204);
+            this.grpDatosDomicilio.Size = new System.Drawing.Size(637, 201);
             this.grpDatosDomicilio.TabIndex = 3;
             this.grpDatosDomicilio.TabStop = false;
             this.grpDatosDomicilio.Text = "Datos del Domicilio";
@@ -297,6 +284,16 @@
             this.lblDireccion.TabIndex = 0;
             this.lblDireccion.Text = "Dirección:";
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(574, 458);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // grpDatosAlumnos
             // 
             this.grpDatosAlumnos.Controls.Add(this.txtNacionalidad);
@@ -313,9 +310,9 @@
             this.grpDatosAlumnos.Controls.Add(this.lblApellidos);
             this.grpDatosAlumnos.Controls.Add(this.txtNombres);
             this.grpDatosAlumnos.Controls.Add(this.lblNombre);
-            this.grpDatosAlumnos.Location = new System.Drawing.Point(-6, -3);
+            this.grpDatosAlumnos.Location = new System.Drawing.Point(13, 76);
             this.grpDatosAlumnos.Name = "grpDatosAlumnos";
-            this.grpDatosAlumnos.Size = new System.Drawing.Size(648, 159);
+            this.grpDatosAlumnos.Size = new System.Drawing.Size(636, 166);
             this.grpDatosAlumnos.TabIndex = 2;
             this.grpDatosAlumnos.TabStop = false;
             this.grpDatosAlumnos.Text = "Datos del Alumno";
@@ -434,29 +431,19 @@
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombres:";
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(568, 446);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // frmBuscarAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 479);
+            this.ClientSize = new System.Drawing.Size(661, 486);
+            this.Controls.Add(this.grpDatosAlumnos);
+            this.Controls.Add(this.grpDatosDomicilio);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.gpbResultado);
             this.Controls.Add(this.grpBuscarAlumnos);
             this.Name = "frmBuscarAlumnos";
             this.Text = "Gestión de Alumnos";
             this.grpBuscarAlumnos.ResumeLayout(false);
             this.grpBuscarAlumnos.PerformLayout();
-            this.gpbResultado.ResumeLayout(false);
             this.grpDatosDomicilio.ResumeLayout(false);
             this.grpDatosDomicilio.PerformLayout();
             this.grpDatosAlumnos.ResumeLayout(false);
@@ -471,7 +458,6 @@
         private System.Windows.Forms.Button btnBuscarAlumno;
         private System.Windows.Forms.TextBox txtBuscarApellido;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gpbResultado;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox grpDatosDomicilio;
         private System.Windows.Forms.TextBox txtAltura;

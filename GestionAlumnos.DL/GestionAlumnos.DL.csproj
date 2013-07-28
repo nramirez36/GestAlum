@@ -7,7 +7,7 @@
     <ProjectGuid>{9A1C9A11-FC13-4728-88D6-E592B709CF3E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GestionAlumnos.DL</RootNamespace>
+    <RootNamespace>GestionAlumnos.UI</RootNamespace>
     <AssemblyName>GestionAlumnos.DL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -60,12 +60,6 @@
     <Compile Include="Barrios.cs" />
     <Compile Include="Ciudades.cs" />
     <Compile Include="Domicilios.cs" />
-    <Compile Include="frmBuscarAlumnos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBuscarAlumnos.Designer.cs">
-      <DependentUpon>frmBuscarAlumnos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincias.cs" />
     <Compile Include="TiposDocumentos.cs" />
@@ -75,11 +69,6 @@
       <Project>{67c23aad-9e41-486d-bdd5-7e765d223ddb}</Project>
       <Name>GestionAlumnos.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="frmBuscarAlumnos.resx">
-      <DependentUpon>frmBuscarAlumnos.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
