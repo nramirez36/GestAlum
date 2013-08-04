@@ -40,5 +40,19 @@ namespace Proyecto_GestionAlumnos
         }
         string path = System.IO.Path.GetDirectoryName( 
       System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase );
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            nramirez36.Logger.Logger.enviarEmailConError();
+            MessageBox.Show("ENVIADO");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (nramirez36.Logger.Logger.isConnectionAvailable())
+                MessageBox.Show("HAY INTERNET");
+            else
+                MessageBox.Show("NO HAY INTERNET");
+        }
     }
 }
