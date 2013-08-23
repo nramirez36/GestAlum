@@ -11,12 +11,12 @@ namespace GestionAlumnos.UI
 {
     public class Ciudades
     { 
-        public static IEnumerable<Ciudad> Listar()
+        public static IEnumerable<Ciudad> Listar(int pCodProvincia)
         {
             Database odb = DatabaseFactory.CreateDatabase("gestionAlumnos");
             try
             {
-                return odb.ExecuteSprocAccessor("ListarCiudad", MapBuilder<Ciudad>.MapAllProperties().Build());
+                return odb.ExecuteSprocAccessor("ListarCiudad", MapBuilder<Ciudad>.MapAllProperties().Build(),pCodProvincia);
             }
             catch (Exception ex)
             {

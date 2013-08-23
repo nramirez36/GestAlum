@@ -13,9 +13,9 @@ namespace GestionAlumnos.BL
         {
             return Ciudades.Insertar(pCiudad);
         }
-        public IEnumerable<Ciudad> Listar()
+        public IEnumerable<Ciudad> Listar(int pCodProvincia)
         {
-            return Ciudades.Listar();
+            return Ciudades.Listar(pCodProvincia);
         }
         public bool Modificar(Ciudad pCiudad)
         {

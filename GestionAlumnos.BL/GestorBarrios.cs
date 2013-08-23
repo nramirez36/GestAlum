@@ -13,9 +13,9 @@ namespace GestionAlumnos.BL
         {
             return Barrios.Insertar(pBarrio);
         }
-        public IEnumerable<Barrio> Listar()
+        public IEnumerable<Barrio> Listar(int pCodCiudad)
         {
-            return Barrios.Listar();
+            return Barrios.Listar(pCodCiudad);
         }
         public bool Modificar(Barrio pBarrio)
         {

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpDatosAlumnos = new System.Windows.Forms.GroupBox();
+            this.txtDocumento = new System.Windows.Forms.MaskedTextBox();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
@@ -43,6 +44,10 @@
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.grpDatosDomicilio = new System.Windows.Forms.GroupBox();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtPiso = new System.Windows.Forms.MaskedTextBox();
+            this.txtAltura = new System.Windows.Forms.MaskedTextBox();
             this.lblAltura = new System.Windows.Forms.Label();
             this.cboBarrio = new System.Windows.Forms.ComboBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
@@ -59,11 +64,6 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtDocumento = new System.Windows.Forms.MaskedTextBox();
-            this.txtAltura = new System.Windows.Forms.MaskedTextBox();
-            this.txtPiso = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.grpDatosAlumnos.SuspendLayout();
             this.grpDatosDomicilio.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +90,15 @@
             this.grpDatosAlumnos.TabIndex = 0;
             this.grpDatosAlumnos.TabStop = false;
             this.grpDatosAlumnos.Text = "Datos del Alumno";
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.BeepOnError = true;
+            this.txtDocumento.Location = new System.Drawing.Point(421, 87);
+            this.txtDocumento.Mask = "9999999";
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(104, 20);
+            this.txtDocumento.TabIndex = 11;
             // 
             // txtNacionalidad
             // 
@@ -226,6 +235,41 @@
             this.grpDatosDomicilio.TabStop = false;
             this.grpDatosDomicilio.Text = "Datos del Domicilio";
             // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(421, 166);
+            this.txtCelular.Mask = "0000-000-000000";
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(104, 20);
+            this.txtCelular.TabIndex = 17;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(121, 166);
+            this.txtTelefono.Mask = "0000-000-000000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefono.TabIndex = 15;
+            // 
+            // txtPiso
+            // 
+            this.txtPiso.BeepOnError = true;
+            this.txtPiso.Location = new System.Drawing.Point(121, 71);
+            this.txtPiso.Mask = "99999";
+            this.txtPiso.Name = "txtPiso";
+            this.txtPiso.Size = new System.Drawing.Size(100, 20);
+            this.txtPiso.TabIndex = 7;
+            this.txtPiso.ValidatingType = typeof(int);
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Location = new System.Drawing.Point(421, 33);
+            this.txtAltura.Mask = "99999";
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(104, 20);
+            this.txtAltura.TabIndex = 3;
+            this.txtAltura.ValidatingType = typeof(int);
+            // 
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
@@ -238,7 +282,7 @@
             // cboBarrio
             // 
             this.cboBarrio.FormattingEnabled = true;
-            this.cboBarrio.Location = new System.Drawing.Point(121, 68);
+            this.cboBarrio.Location = new System.Drawing.Point(421, 126);
             this.cboBarrio.Name = "cboBarrio";
             this.cboBarrio.Size = new System.Drawing.Size(200, 21);
             this.cboBarrio.TabIndex = 5;
@@ -246,10 +290,11 @@
             // cboProvincia
             // 
             this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(421, 136);
+            this.cboProvincia.Location = new System.Drawing.Point(121, 104);
             this.cboProvincia.Name = "cboProvincia";
-            this.cboProvincia.Size = new System.Drawing.Size(211, 21);
+            this.cboProvincia.Size = new System.Drawing.Size(200, 21);
             this.cboProvincia.TabIndex = 13;
+            this.cboProvincia.SelectionChangeCommitted += new System.EventHandler(this.cboProvincia_SelectionChangeCommitted);
             // 
             // cboCiudad
             // 
@@ -258,11 +303,12 @@
             this.cboCiudad.Name = "cboCiudad";
             this.cboCiudad.Size = new System.Drawing.Size(200, 21);
             this.cboCiudad.TabIndex = 11;
+            this.cboCiudad.SelectionChangeCommitted += new System.EventHandler(this.cboCiudad_SelectionChangeCommitted);
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(350, 139);
+            this.lblProvincia.Location = new System.Drawing.Point(8, 107);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(54, 13);
             this.lblProvincia.TabIndex = 12;
@@ -271,7 +317,7 @@
             // lblDepto
             // 
             this.lblDepto.AutoSize = true;
-            this.lblDepto.Location = new System.Drawing.Point(350, 110);
+            this.lblDepto.Location = new System.Drawing.Point(350, 74);
             this.lblDepto.Name = "lblDepto";
             this.lblDepto.Size = new System.Drawing.Size(39, 13);
             this.lblDepto.TabIndex = 8;
@@ -279,7 +325,7 @@
             // 
             // txtDepto
             // 
-            this.txtDepto.Location = new System.Drawing.Point(421, 107);
+            this.txtDepto.Location = new System.Drawing.Point(421, 71);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(104, 20);
             this.txtDepto.TabIndex = 9;
@@ -287,7 +333,7 @@
             // lblPiso
             // 
             this.lblPiso.AutoSize = true;
-            this.lblPiso.Location = new System.Drawing.Point(7, 106);
+            this.lblPiso.Location = new System.Drawing.Point(7, 74);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(30, 13);
             this.lblPiso.TabIndex = 6;
@@ -323,7 +369,7 @@
             // lblBarrio
             // 
             this.lblBarrio.AutoSize = true;
-            this.lblBarrio.Location = new System.Drawing.Point(7, 71);
+            this.lblBarrio.Location = new System.Drawing.Point(350, 134);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(37, 13);
             this.lblBarrio.TabIndex = 4;
@@ -363,50 +409,6 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.BeepOnError = true;
-            this.txtDocumento.Location = new System.Drawing.Point(421, 87);
-            this.txtDocumento.Mask = "9999999";
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(104, 20);
-            this.txtDocumento.TabIndex = 11;
-            // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(421, 33);
-            this.txtAltura.Mask = "99999";
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(104, 20);
-            this.txtAltura.TabIndex = 3;
-            this.txtAltura.ValidatingType = typeof(int);
-            // 
-            // txtPiso
-            // 
-            this.txtPiso.BeepOnError = true;
-            this.txtPiso.Location = new System.Drawing.Point(121, 103);
-            this.txtPiso.Mask = "99999";
-            this.txtPiso.Name = "txtPiso";
-            this.txtPiso.Size = new System.Drawing.Size(100, 20);
-            this.txtPiso.TabIndex = 7;
-            this.txtPiso.ValidatingType = typeof(int);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 166);
-            this.txtTelefono.Mask = "0000-000-000000";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
-            this.txtTelefono.TabIndex = 15;
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(421, 166);
-            this.txtCelular.Mask = "0000-000-000000";
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(104, 20);
-            this.txtCelular.TabIndex = 17;
             // 
             // frmAltaAlumnos
             // 

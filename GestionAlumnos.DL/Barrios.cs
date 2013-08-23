@@ -11,12 +11,12 @@ namespace GestionAlumnos.UI
 {
     public class Barrios
     {
-        public static IEnumerable<Barrio> Listar()
+        public static IEnumerable<Barrio> Listar(int pCodCiudad)
         {
             Database odb = DatabaseFactory.CreateDatabase("gestionAlumnos");
             try
             {
-                return odb.ExecuteSprocAccessor("ListarBarrios", MapBuilder<Barrio>.MapAllProperties().Build());
+                return odb.ExecuteSprocAccessor("ListarBarrios", MapBuilder<Barrio>.MapAllProperties().Build(),pCodCiudad);
             }
             catch (Exception ex)
             {

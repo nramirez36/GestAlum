@@ -34,6 +34,7 @@ namespace Proyecto_GestionAlumnos
                 
             #endregion
         #endregion
+
         #region Constructor
                 public frmPantallaPrincipal()
             {
