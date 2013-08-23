@@ -52,7 +52,7 @@ namespace GestionAlumnos.UI
             int result;
             try
             {
-                result = oDb.ExecuteNonQuery("ModificarBarrios", pBarrio.Descripcion, pBarrio.BarrioID);
+                result = oDb.ExecuteNonQuery("ModificarBarrios", pBarrio.Descripcion, pBarrio.CodCiudad, pBarrio.Nombre, pBarrio.CodBarrio);
                 if (result > 0)
                 {
                     return true;
@@ -74,7 +74,7 @@ namespace GestionAlumnos.UI
             int clienteID = -1;
             try
             {
-                clienteID = int.Parse(oDb.ExecuteScalar("InsertarBarrios", pBarrio.Descripcion, pBarrio.BarrioID).ToString());
+                clienteID = int.Parse(oDb.ExecuteScalar("InsertarBarrios", pBarrio.Nombre,pBarrio.Descripcion, pBarrio.CodCiudad).ToString());
             }
             catch (Exception ex)
             {

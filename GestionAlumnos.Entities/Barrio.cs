@@ -8,7 +8,9 @@ namespace GestionAlumnos.Entities
 {
     public class Barrio
     {
-        public int BarrioID { get; set; }
+        public int CodBarrio { get; set; }
+        public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public int CodCiudad { get; set; }
     }
 }

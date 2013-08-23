@@ -52,7 +52,7 @@ namespace GestionAlumnos.UI
             int result;
             try
             {
-                result = oDb.ExecuteNonQuery("ModificarProvincia", pProvincia.Descripcion, pProvincia.ProvinciaID);
+                result = oDb.ExecuteNonQuery("ModificarProvincia", pProvincia.Descripcion, pProvincia.Nombre,pProvincia.CodProvincia);
                 if (result > 0)
                 {
                     return true;
@@ -74,7 +74,7 @@ namespace GestionAlumnos.UI
             int clienteID = -1;
             try
             {
-                clienteID = int.Parse(oDb.ExecuteScalar("InsertarProvincia", pProvincia.Descripcion).ToString());
+                clienteID = int.Parse(oDb.ExecuteScalar("InsertarProvincia", pProvincia.Nombre, pProvincia.Descripcion).ToString());
             }
             catch (Exception ex)
             {

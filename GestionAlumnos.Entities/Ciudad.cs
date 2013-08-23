@@ -8,7 +8,9 @@ namespace GestionAlumnos.Entities
 {
     public class Ciudad
     {
-        public int CiudadID { get; set; }
+        public int CodCiudad { get; set; }
+        public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public int CodProvincia { get; set; }
     }
 }
