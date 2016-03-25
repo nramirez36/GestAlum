@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAlumnos.DL", "Gestio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAlumnos.BL", "GestionAlumnos.BL\GestionAlumnos.BL.csproj", "{F0393702-3391-4F25-8DC1-30E979A17D53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nramirez36.Logger", "nramirez36.Log\nramirez36.Logger.csproj", "{672502C1-A088-45CA-ADF7-821E967BBDAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nramirez36.Logger", "..\nramirez36 - Proyectos\Logger\nramirez36.Log\nramirez36.Logger.csproj", "{672502C1-A088-45CA-ADF7-821E967BBDAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

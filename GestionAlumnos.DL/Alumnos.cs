@@ -8,7 +8,8 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data;
-namespace GestionAlumnos.UI
+using nramirez36.Logger;
+namespace GestionAlumnos.DL
 {
     public class Alumnos
     {
@@ -109,6 +110,8 @@ namespace GestionAlumnos.UI
             }
             catch (Exception ex)
             {
+                //Log.WriteXMLError("LiderGNC.Web", this.Context.Request.Url.AbsolutePath, "Page_Load()", ex.Message);
+                
                 Console.WriteLine("Problemas Al Listar Los ALumnos: " + ex.Message);
                 throw;
             }

@@ -222,6 +222,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\nramirez36 - Proyectos\Logger\nramirez36.Log\nramirez36.Logger.csproj">
+      <Project>{672502c1-a088-45ca-adf7-821e967bbdac}</Project>
+      <Name>nramirez36.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestionAlumnos.BL\GestionAlumnos.BL.csproj">
       <Project>{f0393702-3391-4f25-8dc1-30e979a17d53}</Project>
       <Name>GestionAlumnos.BL</Name>
@@ -229,10 +233,6 @@
     <ProjectReference Include="..\GestionAlumnos.Entities\GestionAlumnos.Entities.csproj">
       <Project>{67c23aad-9e41-486d-bdd5-7e765d223ddb}</Project>
       <Name>GestionAlumnos.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\nramirez36.Log\nramirez36.Logger.csproj">
-      <Project>{672502c1-a088-45ca-adf7-821e967bbdac}</Project>
-      <Name>nramirez36.Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

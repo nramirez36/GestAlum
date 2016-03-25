@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GestionAlumnos.Entities;
+using GestionAlumnos.BL;
 namespace Proyecto_GestionAlumnos
 {
     public partial class frmBuscarAlumnos : Form
@@ -31,6 +32,7 @@ namespace Proyecto_GestionAlumnos
         #endregion
 
         #region Metodos
+            
             private void DesactivarCampos()
             {
                 txtAltura.Enabled = false;
@@ -68,6 +70,91 @@ namespace Proyecto_GestionAlumnos
                 cboProvincia.Enabled = true;
                 cboTipoDocumento.Enabled = true;
                 dtpFechaNacimiento.Enabled = true;
+            }
+            private void LoadComboProvincias()
+            {
+                try
+                {
+                    GestorProvincias oGP = new GestorProvincias();
+                    cboProvincia.DataSource = oGP.Listar().ToList();
+                    cboProvincia.DisplayMember = "Descripcion";
+                    cboProvincia.ValueMember = "codProvincia";
+                    if (cboProvincia.Items.Count != 0)
+                    {
+                        int codProvincia = Convert.ToInt32(cboProvincia.SelectedValue);
+                        LoadComboCiudad(codProvincia);
+                    }
+                    else
+                    {
+                        cboProvincia.DataSource = null;
+                        cboProvincia.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("LISTARPROVINCIAS:" + ex.Message);
+                    throw;
+                }
+            }
+            private void LoadComboCiudad(int pCodProvincia)
+            {
+                try
+                {
+                    GestorCiudades oGC = new GestorCiudades();
+                    cboCiudad.DataSource = oGC.Listar(pCodProvincia).ToList();
+                    cboCiudad.DisplayMember = "Descripcion";
+                    cboCiudad.ValueMember = "codCiudad";
+                    if (cboCiudad.Items.Count != 0)
+                    {
+                        int codCiudad = Convert.ToInt32(cboCiudad.SelectedValue);
+                        LoadComboBarrio(codCiudad);
+                    }
+                    else
+                    {
+                        cboCiudad.DataSource = null;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("LISTARCIUDAD:" + ex.Message);
+                    throw;
+                }
+
+            }
+            private void LoadComboBarrio(int pCodCiudad)
+            {
+                try
+                {
+                    cboBarrio.DataSource = null;
+                    GestorBarrios oGB = new GestorBarrios();
+                    cboBarrio.DataSource = oGB.Listar(pCodCiudad).ToList();
+                    cboBarrio.DisplayMember = "Descripcion";
+                    cboBarrio.ValueMember = "codBarrio";
+                    if (cboBarrio.Items.Count == 0)
+                        cboBarrio.DataSource = null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("LISTARBARRIO:" + ex.Message);
+                    throw;
+                }
+            }
+            private void ListarTiposDocumentos()
+            {
+                try
+                {
+                    GestorTipoDocumentos oGTP = new GestorTipoDocumentos();
+                    cboTipoDocumento.DataSource = oGTP.Listar().ToList();
+                    cboTipoDocumento.DisplayMember = "Descripcion";
+                    cboTipoDocumento.ValueMember = "TipoDocumentoID";
+                    //cboTipoDocumento.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("LISTARTIPOSDOCUMENTOS:" + ex.Message);
+                    throw;
+                }
             }
         #endregion
             

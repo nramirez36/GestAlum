@@ -65,6 +65,10 @@
     <Compile Include="TiposDocumentos.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\nramirez36 - Proyectos\Logger\nramirez36.Log\nramirez36.Logger.csproj">
+      <Project>{672502c1-a088-45ca-adf7-821e967bbdac}</Project>
+      <Name>nramirez36.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestionAlumnos.Entities\GestionAlumnos.Entities.csproj">
       <Project>{67c23aad-9e41-486d-bdd5-7e765d223ddb}</Project>
       <Name>GestionAlumnos.Entities</Name>

@@ -88,7 +88,7 @@ namespace Proyecto_GestionAlumnos
             {
                 frmModificarMaterias = new frmModificarMaterias();
                 frmModificarMaterias.MdiParent = this;
-                frmModificarMaterias.Show();
+                frmModificarMaterias.Show(); 
             }
             private void buscarToolStripMenuItem1_Click(object sender, EventArgs e)
             {

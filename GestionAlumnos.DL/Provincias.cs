@@ -7,7 +7,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using GestionAlumnos.Entities;
-namespace GestionAlumnos.UI
+namespace GestionAlumnos.DL
 {
     public class Provincias
     {

@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using nramirez36; 
 namespace Proyecto_GestionAlumnos
 {
     public partial class frmTestCalcularEdad : Form
@@ -44,16 +44,20 @@ namespace Proyecto_GestionAlumnos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            nramirez36.Logger.Logger.enviarEmailConError();
+           // nramirez36.Logger.Logger.enviarEmailConError();
             MessageBox.Show("ENVIADO");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (nramirez36.Logger.Logger.isConnectionAvailable())
+           /* if (nramirez36.Logger.Logger.isConnectionAvailable())
+            {
                 MessageBox.Show("HAY INTERNET");
+                nramirez36.Logger.Logger.WriteXMLError("TEST", "TEEST", "PRUEBE", "ESTO ES UNA PRUEBA");
+            }
+
             else
-                MessageBox.Show("NO HAY INTERNET");
+                MessageBox.Show("NO HAY INTERNET");*/
         }
 
         private void LoadComboProvincias()

@@ -95,7 +95,7 @@
             // 
             this.txtDocumento.BeepOnError = true;
             this.txtDocumento.Location = new System.Drawing.Point(421, 87);
-            this.txtDocumento.Mask = "9999999";
+            this.txtDocumento.Mask = "99999999";
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(104, 20);
             this.txtDocumento.TabIndex = 11;
@@ -258,7 +258,7 @@
             this.txtPiso.Mask = "99999";
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(100, 20);
-            this.txtPiso.TabIndex = 7;
+            this.txtPiso.TabIndex = 5;
             this.txtPiso.ValidatingType = typeof(int);
             // 
             // txtAltura
@@ -285,7 +285,7 @@
             this.cboBarrio.Location = new System.Drawing.Point(421, 126);
             this.cboBarrio.Name = "cboBarrio";
             this.cboBarrio.Size = new System.Drawing.Size(200, 21);
-            this.cboBarrio.TabIndex = 5;
+            this.cboBarrio.TabIndex = 13;
             // 
             // cboProvincia
             // 
@@ -293,7 +293,7 @@
             this.cboProvincia.Location = new System.Drawing.Point(121, 104);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(200, 21);
-            this.cboProvincia.TabIndex = 13;
+            this.cboProvincia.TabIndex = 9;
             this.cboProvincia.SelectionChangeCommitted += new System.EventHandler(this.cboProvincia_SelectionChangeCommitted);
             // 
             // cboCiudad
@@ -308,19 +308,19 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(8, 107);
+            this.lblProvincia.Location = new System.Drawing.Point(7, 104);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(54, 13);
-            this.lblProvincia.TabIndex = 12;
+            this.lblProvincia.TabIndex = 8;
             this.lblProvincia.Text = "Provincia:";
             // 
             // lblDepto
             // 
             this.lblDepto.AutoSize = true;
-            this.lblDepto.Location = new System.Drawing.Point(350, 74);
+            this.lblDepto.Location = new System.Drawing.Point(352, 74);
             this.lblDepto.Name = "lblDepto";
             this.lblDepto.Size = new System.Drawing.Size(39, 13);
-            this.lblDepto.TabIndex = 8;
+            this.lblDepto.TabIndex = 6;
             this.lblDepto.Text = "Depto:";
             // 
             // txtDepto
@@ -328,7 +328,7 @@
             this.txtDepto.Location = new System.Drawing.Point(421, 71);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(104, 20);
-            this.txtDepto.TabIndex = 9;
+            this.txtDepto.TabIndex = 7;
             // 
             // lblPiso
             // 
@@ -336,7 +336,7 @@
             this.lblPiso.Location = new System.Drawing.Point(7, 74);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(30, 13);
-            this.lblPiso.TabIndex = 6;
+            this.lblPiso.TabIndex = 4;
             this.lblPiso.Text = "Piso:";
             // 
             // lblCelular
@@ -360,7 +360,7 @@
             // lblCiudad
             // 
             this.lblCiudad.AutoSize = true;
-            this.lblCiudad.Location = new System.Drawing.Point(6, 134);
+            this.lblCiudad.Location = new System.Drawing.Point(7, 134);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(43, 13);
             this.lblCiudad.TabIndex = 10;
@@ -372,7 +372,7 @@
             this.lblBarrio.Location = new System.Drawing.Point(350, 134);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(37, 13);
-            this.lblBarrio.TabIndex = 4;
+            this.lblBarrio.TabIndex = 12;
             this.lblBarrio.Text = "Barrio:";
             // 
             // txtDireccion

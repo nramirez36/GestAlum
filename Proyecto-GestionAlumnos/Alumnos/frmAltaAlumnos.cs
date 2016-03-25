@@ -63,62 +63,11 @@ namespace Proyecto_GestionAlumnos
         #endregion
 
         #region Metodos
-        /// <summary>
-        /// ACA TENGO QUE CAMBIAR LOS METODOS DE LISTAR PARA QUE HAGA DROPDOWNLISTCASCADE
-        /// </summary>
             private void inicializarDatos()
             {
-                //ListarBarrios();
-                //ListarCiudades();
-                //ListarProvinicias();
                 LoadComboProvincias();
                 ListarTiposDocumentos();
             }
-            //private void ListarBarrios()
-            //{
-            //    try
-            //    {
-            //        oGB = new GestorBarrios();
-            //        cboBarrio.DataSource = oGB.Listar().ToList();
-            //        cboBarrio.DisplayMember = "Descripcion";
-            //        cboBarrio.ValueMember = "BarrioID";
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine("LISTARTIPOSDOCUMENTOS:" + ex.Message);
-            //        throw;
-            //    }
-            //}
-            //private void ListarCiudades()
-            //{
-            //    try
-            //    {
-            //        oGC = new GestorCiudades();
-            //        cboCiudad.DataSource = oGC.Listar().ToList();
-            //        cboCiudad.DisplayMember = "Descripcion";
-            //        cboCiudad.ValueMember = "CiudadID";
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine("LISTARCIUDADES:" + ex.Message);
-            //        throw;
-            //    }
-            //}
-            //private void ListarProvinicias()
-            //{
-            //    try
-            //    {
-            //        oGP = new GestorProvincias();
-            //        cboProvincia.DataSource = oGP.Listar().ToList();
-            //        cboProvincia.DisplayMember = "Descripcion";
-            //        cboProvincia.ValueMember = "ProvinciaID";
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine("LISTARPROVINCIAS:" + ex.Message);
-            //        throw;
-            //    }
-            //}
             private void LoadComboProvincias()
             {
                 try
@@ -188,8 +137,6 @@ namespace Proyecto_GestionAlumnos
                     throw;
                 }
             }
-
-
             private void ListarTiposDocumentos()
             {
                 try
@@ -334,6 +281,7 @@ namespace Proyecto_GestionAlumnos
                     {
                         //txtNacionalidad.Text = "ANDUVO";
                         registrarAlumno();
+                        MessageBox.Show("El Alumno Se Registro Correctamente");
                         this.Close();
                     }
                 }
@@ -347,19 +295,17 @@ namespace Proyecto_GestionAlumnos
             {
                 txtEdad.Text = Edad().ToString();
             }
-        #endregion    
-
             private void cboProvincia_SelectionChangeCommitted(object sender, EventArgs e)
             {
                 int codProvincia = Convert.ToInt32(cboProvincia.SelectedValue);
                 LoadComboCiudad(codProvincia);
             }
-
             private void cboCiudad_SelectionChangeCommitted(object sender, EventArgs e)
             {
                 int codBarrio = Convert.ToInt32(cboCiudad.SelectedValue);
                 LoadComboBarrio(codBarrio);
             }
+        #endregion    
 
     }
 }
